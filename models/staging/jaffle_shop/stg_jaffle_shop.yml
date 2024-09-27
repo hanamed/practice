@@ -2,6 +2,7 @@ version: 2
 
 models:
   - name: stg_jaffle_shop__customers
+    description: Customer data table.
     docs:
       show: true
     columns:
@@ -14,6 +15,7 @@ models:
       show: true
     columns:
       - name: order_id
+        description: Unique order id.
         tests:
           - unique
           - not_null
@@ -24,6 +26,7 @@ models:
               field: customer_id
 
       - name: status
+        description: "{{ doc('order_status') }}"
         tests:
           - accepted_values:
               values:
